@@ -3,5 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public interface IDamageable {
-    void Damage(int dmg);
+    void takeDamage(int dmg);
+    int getTeamId();
 }
