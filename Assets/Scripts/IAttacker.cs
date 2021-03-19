@@ -4,5 +4,16 @@ using UnityEngine;
 
 public interface IAttacker
 {
-    public void Attack(IDamageable target);
+    enum attackType
+    {
+        PIERCING,
+        MAGIC,
+        NORMAL,
+        SIEGE,
+        CHAOS
+    }
+    double damage { get; set; }
+    double attackSpeed { get; set; }
+
+    void Attack(IDamageable target);
 }
