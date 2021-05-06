@@ -4,14 +4,21 @@ using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
 {
+    //edge scroll variables
     public int camera_margin = 10;
     public float camera_speed = 10f;
-    public float zoom_speed = 80f;
 
+    //zoom variables
+    public float zoom_speed = 80f;
     private float zoom_value = 5f;
+
+    //pan variables
+    private Vector3 lastMousePosition = new Vector3();
+    private bool panning = false;
 
     Rigidbody2D rb;
     Camera cam;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -21,7 +28,8 @@ public class CameraMovement : MonoBehaviour
     {
         if (Application.isFocused)
         {
-            HandleEdgeScrolling();
+            HandlePanning();
+            if(!panning) HandleEdgeScrolling();
             HandleZooming();
         }
     }
@@ -47,6 +55,7 @@ public class CameraMovement : MonoBehaviour
         }
     }
 
+
     private void HandleZooming()
     {
         Vector3 mPos_beforeZoom = cam.ScreenToWorldPoint(Input.mousePosition);
@@ -59,11 +68,32 @@ public class CameraMovement : MonoBehaviour
         {
             zoom_value += zoom_speed * Time.deltaTime;
         }
-        zoom_value = Mathf.Clamp(zoom_value, 5f, 15f);
+        zoom_value = Mathf.Clamp(zoom_value, 2f, 15f);
         cam.orthographicSize = zoom_value;
 
         Vector3 mPos_afterZoom = cam.ScreenToWorldPoint(Input.mousePosition);
         cam.transform.position += (mPos_beforeZoom - mPos_afterZoom);
+    }
+
+    private void HandlePanning()
+    {
+        if (Input.GetMouseButtonDown(1))
+        {
+            lastMousePosition = cam.ScreenToWorldPoint(Input.mousePosition);
+            panning = true;
+        }
+
+        if (Input.GetMouseButtonUp(1))
+        {
+            panning = false;
+        }
+
+        if (panning)
+        {
+            Vector3 currentMousePosition = cam.ScreenToWorldPoint(Input.mousePosition);
+            cam.transform.position += (lastMousePosition - currentMousePosition);
+        }
+        
     }
 
 }
