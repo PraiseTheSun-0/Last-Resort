@@ -9,7 +9,7 @@ public class Building : MonoBehaviour, IDamageable
     public float armor;
     public int team;
 
-    public void takeDamage(float dmg)
+    public void takeDamage(float dmg, e_attackType type)
     {
         this.HP -= dmg;
     }
