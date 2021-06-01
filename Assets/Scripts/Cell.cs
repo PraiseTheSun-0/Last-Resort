@@ -7,6 +7,7 @@ public class Cell
 	public byte cost;
 	public ushort bestCost;
 	public GridDirection bestDirection;
+	public int team;
 
 	public Cell(Vector3 _worldPos, Vector2Int _gridIndex)
 	{

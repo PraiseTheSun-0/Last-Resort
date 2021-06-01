@@ -27,8 +27,20 @@ public class FlowField
 		{
 			for (int y = 0; y < gridSize.y; y++)
 			{
-				Vector3 worldPos = new Vector3(cellDiameter * x + cellRadius, cellDiameter * y + cellRadius, 0);
+				Vector3 worldPos = new Vector3(cellRadius * 2 * x + cellRadius, cellRadius * 2 * y + cellRadius, 0);
 				grid[x, y] = new Cell(worldPos, new Vector2Int(x, y));
+				if (x < 16 && y < 19)
+				{
+					grid[x, y].team = 0;
+				}
+				else if (x < 76 && x > 59 && y < 19)
+				{
+					grid[x, y].team = 1;
+				}
+				else
+				{
+					grid[x, y].team = -1;
+				}
 			}
 		}
 	}
