@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: -8936795056022849570}
   - component: {fileID: 4142857255298856083}
   m_Layer: 10
-  m_Name: UpgArcher
+  m_Name: Silencer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -213,17 +213,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9626b38dfec3cf46909d98e761f7e94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 500
-  maxHP: 500
-  armor: 6
-  damage: 50
-  attackRange: 5
-  attackSpeed: 0.9
-  mana: 0
-  moveSpeed: 1000
+  HP: 525
+  armor: 3
+  damage: 57
+  attackRange: 4
+  attackSpeed: 1
+  mana: 200
+  moveSpeed: 900
   team: 0
-  armorType: 3
-  attackType: 0
+  armorType: 1
+  attackType: 1
   deadPrefab: {fileID: 99225359775515673, guid: 72444cf572814924d8c6bd2d7bb3cae4, type: 3}
   enemy_detection_collider: {fileID: 2163200752150800717}
 --- !u!1 &2122494802069729106
@@ -519,7 +518,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 7ce0f84e6b2b5334c9a9b19810e797be, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 72812dc245c52ff4ca29d485a363afd5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

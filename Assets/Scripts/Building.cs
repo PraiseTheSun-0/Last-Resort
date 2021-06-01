@@ -5,7 +5,9 @@ using UnityEngine;
 public class Building : MonoBehaviour, IDamageable
 {
     public int cost;
+    public int crystalCost;
     public float HP;
+    public float maxHP;
     public float armor;
     public int team;
 
@@ -14,4 +16,8 @@ public class Building : MonoBehaviour, IDamageable
         this.HP -= dmg;
     }
 
+    private void Start()
+    {
+        maxHP = HP;
+    }
 }

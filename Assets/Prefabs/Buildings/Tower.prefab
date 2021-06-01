@@ -71,9 +71,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61d562c270dbabf4b886e9cbcfca5bb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 0
-  HP: 100
-  armor: 0
+  cost: 250
+  crystalCost: 300
+  HP: 1500
+  maxHP: 1500
+  armor: 5
   team: 0
 --- !u!1 &7960391467365274293
 GameObject:
