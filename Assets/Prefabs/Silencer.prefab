@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: -8936795056022849570}
   - component: {fileID: 4142857255298856083}
   m_Layer: 10
-  m_Name: Swordsman
+  m_Name: Silencer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -222,8 +222,8 @@ MonoBehaviour:
   mana: 0
   moveSpeed: 1000
   team: 0
-  armorType: 2
-  attackType: 2
+  armorType: 1
+  attackType: 1
   deadPrefab: {fileID: 99225359775515673, guid: 72444cf572814924d8c6bd2d7bb3cae4, type: 3}
   enemy_detection_collider: {fileID: 2163200752150800717}
 --- !u!1 &2122494802069729106
@@ -519,7 +519,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 6fd9cfeb200cb6648a7ad8e63c9e674e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 72812dc245c52ff4ca29d485a363afd5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

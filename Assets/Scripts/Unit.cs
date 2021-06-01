@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,7 +23,6 @@ public enum e_armorType
 
 public class Unit : MonoBehaviour, IDamageable, IAttacker
 {
-
     public float HP;
     public float maxHP = 100;
     public float armor;
@@ -144,13 +144,23 @@ public class Unit : MonoBehaviour, IDamageable, IAttacker
 
     public void takeDamage(float dmg, e_attackType type)
     {
-        this.HP -= dmg; //TODO ARMOR LOGIC
+        this.HP -= dmg * (1.0f - Convert.ToSingle(Math.Log(armor)) * 0.2f); //TODO ARMOR LOGIC
         if(this.HP <= 0)
         {
             Instantiate(deadPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
+
+    //public float damageMultiply(e_attackType type)
+    //{
+    //    float multiplier;
+    //    switch (type)
+    //    {
+    //        case
+    //    }
+    //    return multiplier;
+    //}
 
     public void Attack(IDamageable target, e_attackType type)
     {

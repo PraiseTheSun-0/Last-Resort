@@ -31,10 +31,10 @@ public class GridController : MonoBehaviour
 		team1_flowfield.CreateCostField();
 		team2_flowfield.CreateCostField();
 
-		Cell destinationCell_team1 = team1_flowfield.grid[70,9];
+		Cell destinationCell_team1 = team1_flowfield.grid[68,9];
 		team1_flowfield.CreateIntegrationField(destinationCell_team1);
 
-		Cell destinationCell_team2 = team2_flowfield.grid[5, 9];
+		Cell destinationCell_team2 = team2_flowfield.grid[7, 9];
 		team2_flowfield.CreateIntegrationField(destinationCell_team2);
 
 		team1_flowfield.CreateFlowField();
