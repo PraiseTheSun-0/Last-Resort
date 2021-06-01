@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 3468488206112542827}
   - component: {fileID: 3468488206112542825}
   - component: {fileID: 3468488206112542824}
-  - component: {fileID: 6920430666348947669}
+  - component: {fileID: -3322042489897887852}
   m_Layer: 8
-  m_Name: Barracks
+  m_Name: Magic_Barracks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ MonoBehaviour:
   HP: 100
   armor: 0
   team: 0
---- !u!114 &6920430666348947669
+--- !u!114 &-3322042489897887852
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -88,7 +88,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0b14b88d8b5e854cb96b4fed478f938, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitToSpawn: {fileID: 1954332777335877069, guid: 8960a5f0f9672c649b576f7a73456717, type: 3}
+  unitToSpawn: {fileID: 1954332777335877069, guid: daad9e45804e77c4b869e6cdde7891d3, type: 3}
 --- !u!1 &7960391467365274293
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,7 +160,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 2aa11dcdd1cde484ead5ad867ae85eff, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4035f7cd571607b4bb610f8fdcfaca86, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
