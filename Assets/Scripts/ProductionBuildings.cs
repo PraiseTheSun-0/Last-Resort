@@ -8,7 +8,7 @@ public class ProductionBuildings : MonoBehaviour
     public GameObject unitToSpawn;
     private Vector3 offset = new Vector3(2.0f, 0.5f);
     private float spawnTimer = 0;
-    public float spawnTime = 1.5f;
+    public float spawnTime = 15f;
 
     public void Update()
     {

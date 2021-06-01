@@ -24,7 +24,7 @@ public enum e_armorType
 public class Unit : MonoBehaviour, IDamageable, IAttacker
 {
     public float HP;
-    public float maxHP = 100;
+    private float maxHP;
     public float armor;
     public float damage;
     public float attackRange;
@@ -52,6 +52,7 @@ public class Unit : MonoBehaviour, IDamageable, IAttacker
         sr = GetComponentInChildren<SpriteRenderer>();
         hpbar_slider = GetComponentInChildren<Slider>();
         attack_timer = attackSpeed;
+        maxHP = HP;
     }
 
     private void Update()

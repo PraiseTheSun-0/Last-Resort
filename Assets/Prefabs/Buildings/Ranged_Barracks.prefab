@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 3468488206112542827}
   - component: {fileID: 3468488206112542825}
   - component: {fileID: 3468488206112542824}
-  - component: {fileID: -6907063190482607687}
+  - component: {fileID: -1910466378778936308}
   m_Layer: 8
-  m_Name: UpgBarracks
+  m_Name: Ranged_Barracks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72,11 +72,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61d562c270dbabf4b886e9cbcfca5bb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 0
-  HP: 100
-  armor: 0
+  cost: 275
+  crystalCost: 0
+  HP: 1400
+  maxHP: 1400
+  armor: 5
   team: 0
---- !u!114 &-6907063190482607687
+--- !u!114 &-1910466378778936308
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -88,7 +90,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0b14b88d8b5e854cb96b4fed478f938, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitToSpawn: {fileID: 1954332777335877069, guid: 4348f46707c09cc4b9f7c6361b61f83e, type: 3}
+  unitToSpawn: {fileID: 1954332777335877069, guid: a4a0c74f1212bf34684a05d3ec224150, type: 3}
+  spawnTime: 15
 --- !u!1 &7960391467365274293
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,7 +163,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 8b3f168f502fd0a4f8e935c5365a7900, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b165f8aca07b1b14580a97456b1e01df, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

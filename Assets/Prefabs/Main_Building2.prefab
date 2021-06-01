@@ -72,8 +72,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cost: 0
-  HP: 100
-  armor: 0
+  crystalCost: 0
+  HP: 5000
+  maxHP: 5000
+  armor: 5
   team: 0
 --- !u!1 &7960391467365274293
 GameObject:

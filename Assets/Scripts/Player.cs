@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class Player : MonoBehaviour 
 {
-    public int gold { get; set; }
-    public int crystals { get; set; }
-    public int income { get; set; }
-    public int team { get; set; }
-    //build
-    //explode
-    //
+    public int gold;
+    public int crystals;
+    public int income;
+    public int team;
+
+    private void Start()
+    {
+        gold = 250;
+        crystals = 125;
+        income = 5;
+    }
 }
