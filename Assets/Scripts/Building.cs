@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Building : MonoBehaviour, IDamageable
 {
-    public int cost { get; set; }
-    public double HP { get; set; }
-    public double armor { get; set; }
+    public int cost;
+    public float HP;
+    public float armor;
+    public int team;
 
-    public void takeDamage(double dmg)
+    public void takeDamage(float dmg)
     {
         this.HP -= dmg;
     }
+
 }

@@ -16,7 +16,12 @@ public class UnitController : MonoBehaviour
 		unitsInGame = new List<GameObject>();
 	}
 
-	void Update()
+    private void Start()
+    {
+		gridController = GameObject.Find("GridController").GetComponent<GridController>();
+    }
+
+    void Update()
 	{
 		if (Input.GetKeyDown(KeyCode.Alpha1))
 		{
@@ -31,15 +36,21 @@ public class UnitController : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-		if (gridController.curFlowField == null) { return; }
-		foreach (GameObject unit in unitsInGame)
-		{
-			Cell cellBelow = gridController.curFlowField.GetCellFromWorldPos(unit.transform.position);
-			Vector2 moveDirection = new Vector3(cellBelow.bestDirection.Vector.x, cellBelow.bestDirection.Vector.y);
-			Rigidbody2D unitRB = unit.GetComponent<Rigidbody2D>();
-			unitRB.velocity = moveDirection * moveSpeed;
-		}
+		//if (gridController.curFlowField == null) { return; }
+		//foreach (GameObject unit in unitsInGame)
+		//{
+		//	Cell cellBelow = gridController.curFlowField.GetCellFromWorldPos(unit.transform.position);
+		//	Vector2 moveDirection = new Vector3(cellBelow.bestDirection.Vector.x, cellBelow.bestDirection.Vector.y);
+		//	unit.GetComponent<Unit>().FlowFieldMove(moveDirection);
+		//}
 	}
+
+	public Vector2 whereToMove(Vector2 pos, int teamID)
+    {
+		Cell cellBelow = gridController.team1_flowfield.GetCellFromWorldPos(pos);
+		if (teamID == 1) cellBelow = gridController.team2_flowfield.GetCellFromWorldPos(pos);
+		return new Vector2(cellBelow.bestDirection.Vector.x, cellBelow.bestDirection.Vector.y).normalized;
+    }
 
 	private void SpawnUnits()
 	{
