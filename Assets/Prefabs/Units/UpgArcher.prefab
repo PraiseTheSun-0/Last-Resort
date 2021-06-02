@@ -224,7 +224,7 @@ MonoBehaviour:
   armorType: 3
   attackType: 0
   deadPrefab: {fileID: 99225359775515673, guid: 72444cf572814924d8c6bd2d7bb3cae4, type: 3}
-  enemy_detection_collider: {fileID: 2163200752150800717}
+  enemy_detector: {fileID: 0}
 --- !u!1 &2122494802069729106
 GameObject:
   m_ObjectHideFlags: 0
@@ -410,6 +410,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3107840283085251095}
   - component: {fileID: 2163200752150800717}
+  - component: {fileID: 423952807594422426}
   m_Layer: 0
   m_Name: enemy_detect_field
   m_TagString: Untagged
@@ -447,6 +448,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1
+--- !u!114 &423952807594422426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6067958572556694838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19136f4d61e133e45b7e5ad21dd4d116, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  neighbors: []
 --- !u!1 &8563429995002505072
 GameObject:
   m_ObjectHideFlags: 0

@@ -24,7 +24,7 @@ public class ProductionBuildings : MonoBehaviour
 
         GameObject newUnit = Instantiate(unitToSpawn, transform.position + offset, Quaternion.identity);
         newUnit.GetComponent<Unit>().team = GetComponent<Building>().team;
-        if (newUnit.GetComponent<Unit>().team == 0) newUnit.layer = 10;
-        else newUnit.layer = 12;
+        if (newUnit.GetComponent<Unit>().team == 0) newUnit.tag = "team1";
+        else newUnit.tag = "team2";
     }
 }

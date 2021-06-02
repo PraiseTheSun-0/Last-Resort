@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 815069679419800585}
   - component: {fileID: 5188663923538494410}
   - component: {fileID: 8187345422236168050}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: hpbar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,9 +140,9 @@ GameObject:
   - component: {fileID: 1954332777335877056}
   - component: {fileID: -8936795056022849570}
   - component: {fileID: 4142857255298856083}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: swordsman
-  m_TagString: Untagged
+  m_TagString: team1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -236,7 +236,7 @@ GameObject:
   - component: {fileID: 6064576619152161986}
   - component: {fileID: 6505396905227248}
   - component: {fileID: 2754781942266239421}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: hpbar_fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -312,7 +312,7 @@ GameObject:
   - component: {fileID: 3387629259080588094}
   - component: {fileID: 4926548556546150570}
   - component: {fileID: 6675758396004614245}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -410,6 +410,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3107840283085251095}
   - component: {fileID: 2163200752150800717}
+  - component: {fileID: 1881985395035447772}
   m_Layer: 0
   m_Name: enemy_detect_field
   m_TagString: Untagged
@@ -447,6 +448,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1
+--- !u!114 &1881985395035447772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6067958572556694838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19136f4d61e133e45b7e5ad21dd4d116, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8563429995002505072
 GameObject:
   m_ObjectHideFlags: 0
