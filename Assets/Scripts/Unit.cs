@@ -41,9 +41,12 @@ public class Unit : MonoBehaviour, IDamageable, IAttacker
 
     public GameObject deadPrefab;
 
-    public EnemyDetector enemy_detector;
+    private EnemyDetector enemy_detector;
 
     private float attack_timer = 0f;
+
+    public bool isRanged = false;
+    public GameObject projectilePrefab;
 
     private void Start()
     {
@@ -91,7 +94,21 @@ public class Unit : MonoBehaviour, IDamageable, IAttacker
             else
             {
                 if(attack_timer >= attackSpeed)
-                    Attack(target.gameObject.GetComponent<IDamageable>(), attackType);
+                    if(!isRanged)
+                        Attack(target.gameObject.GetComponent<IDamageable>(), attackType);
+                    else
+                    {
+                        Quaternion bullet_angle = Quaternion.Euler(0, 0, -90 + Mathf.Rad2Deg * Mathf.Atan2(target.transform.position.y - transform.position.y, target.transform.position.x - transform.position.x));
+                        Vector2 dir = (target.transform.position - transform.position).normalized;
+
+
+                        GameObject bullet = Instantiate(projectilePrefab, transform.position, bullet_angle);
+                        bullet.GetComponent<Rigidbody2D>().AddForce(dir * 500f);
+                        bullet.GetComponent<Bullet>().dmg = damage;
+                        bullet.GetComponent<Bullet>().target = target;
+
+                        attack_timer = 0f;
+                    }
             }
         }
         else
@@ -160,7 +177,7 @@ public class Unit : MonoBehaviour, IDamageable, IAttacker
 
     public void Attack(IDamageable target, e_attackType type)
     {
-        target.takeDamage(damage, type);
-        attack_timer = 0;
+            target.takeDamage(damage, type);
+            attack_timer = 0;
     }
 }
