@@ -34,7 +34,6 @@ public class Unit : MonoBehaviour, IDamageable, IAttacker
     public int team;
     public e_armorType armorType;
     public e_attackType attackType;
-    private bool attackReady = true;
 
     private UnitController uc;
     private SpriteRenderer sr;
@@ -42,7 +41,7 @@ public class Unit : MonoBehaviour, IDamageable, IAttacker
 
     public GameObject deadPrefab;
 
-    public CircleCollider2D enemy_detection_collider;
+    public EnemyDetector enemy_detector;
 
     private float attack_timer = 0f;
 
@@ -51,6 +50,7 @@ public class Unit : MonoBehaviour, IDamageable, IAttacker
         uc = GameObject.Find("UnitController").GetComponent<UnitController>();
         sr = GetComponentInChildren<SpriteRenderer>();
         hpbar_slider = GetComponentInChildren<Slider>();
+        enemy_detector = GetComponentInChildren<EnemyDetector>();
         attack_timer = attackSpeed;
         maxHP = HP;
     }
@@ -69,22 +69,19 @@ public class Unit : MonoBehaviour, IDamageable, IAttacker
 
         MoveAwayFromTeammate();
 
-        ContactFilter2D cf = new ContactFilter2D();
-        cf.SetLayerMask(LayerMask.GetMask("Unit"+(team==0?"_team2":"_team1")));
-        Collider2D[] colresults = new Collider2D[64];
-        if (enemy_detection_collider.OverlapCollider(cf, colresults) > 0)
+        if (enemy_detector.enemies.Count > 0)
         {
-            GameObject target = colresults[0].gameObject;
-            float minDist = Vector3.Distance(transform.position, colresults[0].gameObject.transform.position);
-            for(int i = 0; i < colresults.Length; i++)
+            GameObject target = enemy_detector.enemies[0];
+            float minDist = Vector3.Distance(transform.position, enemy_detector.enemies[0].transform.position);
+            for(int i = 0; i < enemy_detector.enemies.Count; i++)
             {
-                if (!colresults[i]) break;
-
-                float dist = Vector3.Distance(transform.position, colresults[i].gameObject.transform.position);
+                if (!enemy_detector.enemies[i]) break;
+        
+                float dist = Vector3.Distance(transform.position, enemy_detector.enemies[i].transform.position);
                 if (dist < minDist)
                 {
                     minDist = dist;
-                    target = colresults[i].gameObject;
+                    target = enemy_detector.enemies[i];
                 }
             }
             if (Vector3.Distance(transform.position, target.transform.position) > attackRange)
@@ -99,7 +96,7 @@ public class Unit : MonoBehaviour, IDamageable, IAttacker
         }
         else
         {
-            FlowFieldMove();
+          FlowFieldMove();
         }
     }
 
@@ -125,23 +122,21 @@ public class Unit : MonoBehaviour, IDamageable, IAttacker
 
     private void MoveAwayFromTeammate()
     {
-        ContactFilter2D cf1 = new ContactFilter2D();
-        cf1.SetLayerMask(LayerMask.GetMask("Unit" + (team == 0 ? "_team1" : "_team2")));
-        Collider2D[] colresults1 = new Collider2D[64];
-        if (enemy_detection_collider.OverlapCollider(cf1, colresults1) > 1)
+        if (enemy_detector.friendlies.Count > 0)
         {
             Vector3 resultvector = new Vector3();
-            for (int i = 1; i < colresults1.Length; i++)
+            for (int i = 0; i < enemy_detector.friendlies.Count; i++)
             {
-                if (colresults1[i])
-                    if (Vector3.Distance(transform.position, colresults1[i].gameObject.transform.position) < attackRange)
+                if (enemy_detector.friendlies[i])
+                    if (Vector3.Distance(transform.position, enemy_detector.friendlies[i].transform.position) < attackRange*0.9)
                     {
-                        resultvector += colresults1[i].gameObject.transform.position - transform.position;
+                        resultvector += enemy_detector.friendlies[i].transform.position - transform.position;
                     }
             }
             MoveAway(resultvector.normalized);
         }
     }
+
 
     public void takeDamage(float dmg, e_attackType type)
     {
