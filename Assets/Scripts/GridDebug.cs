@@ -68,6 +68,7 @@ public class GridDebug : MonoBehaviour
 		GameObject iconGO = new GameObject();
 		SpriteRenderer iconSR = iconGO.AddComponent<SpriteRenderer>();
 		iconSR.sortingOrder = 2;
+		iconSR.color = new Color(255, 255, 255, 100);
 		iconGO.transform.parent = transform;
 		iconGO.transform.position = cell.worldPos;
 

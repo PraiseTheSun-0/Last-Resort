@@ -223,8 +223,9 @@ MonoBehaviour:
   team: 0
   armorType: 3
   attackType: 0
-  deadPrefab: {fileID: 99225359775515673, guid: 72444cf572814924d8c6bd2d7bb3cae4, type: 3}
-  enemy_detector: {fileID: 0}
+  deadPrefab: {fileID: 99225359775515673, guid: c3d4721c57e9abb4699a4f298a5826e3, type: 3}
+  isRanged: 1
+  projectilePrefab: {fileID: 5306793713009315119, guid: 1c7cae35db7b9f2439ca0bac1169b080, type: 3}
 --- !u!1 &2122494802069729106
 GameObject:
   m_ObjectHideFlags: 0
@@ -460,7 +461,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19136f4d61e133e45b7e5ad21dd4d116, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  neighbors: []
+  friendlies: []
+  enemies: []
 --- !u!1 &8563429995002505072
 GameObject:
   m_ObjectHideFlags: 0
