@@ -28,19 +28,20 @@ public class GridController : MonoBehaviour
     private void Start()
     {
 		InitializeFlowField();
-		team1_flowfield.CreateCostField();
-		team2_flowfield.CreateCostField();
+		updateDirection();
+		//team1_flowfield.CreateCostField();
+		//team2_flowfield.CreateCostField();
 
-		Cell destinationCell_team1 = team1_flowfield.grid[68,9];
-		team1_flowfield.CreateIntegrationField(destinationCell_team1);
+		//Cell destinationCell_team1 = team1_flowfield.grid[68,9];
+		//team1_flowfield.CreateIntegrationField(destinationCell_team1);
 
-		Cell destinationCell_team2 = team2_flowfield.grid[7, 9];
-		team2_flowfield.CreateIntegrationField(destinationCell_team2);
+		//Cell destinationCell_team2 = team2_flowfield.grid[7, 9];
+		//team2_flowfield.CreateIntegrationField(destinationCell_team2);
 
-		team1_flowfield.CreateFlowField();
-		team2_flowfield.CreateFlowField();
+		//team1_flowfield.CreateFlowField();
+		//team2_flowfield.CreateFlowField();
 
-		gridDebug.DrawFlowField();
+		//gridDebug.DrawFlowField();
 	}
 
     private void Update()
@@ -76,5 +77,22 @@ public class GridController : MonoBehaviour
 		//
 		//	gridDebug.DrawFlowField();
 		//}
+	}
+	public void updateDirection()
+    {
+		InitializeFlowField();
+		team1_flowfield.CreateCostField();
+		team2_flowfield.CreateCostField();
+
+		Cell destinationCell_team1 = team1_flowfield.grid[69, 10];
+		team1_flowfield.CreateIntegrationField(destinationCell_team1);
+
+		Cell destinationCell_team2 = team2_flowfield.grid[8, 10];
+		team2_flowfield.CreateIntegrationField(destinationCell_team2);
+
+		team1_flowfield.CreateFlowField();
+		team2_flowfield.CreateFlowField();
+
+		gridDebug.DrawFlowField();
 	}
 }

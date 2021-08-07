@@ -165,16 +165,6 @@ public class Unit : MonoBehaviour, IDamageable, IAttacker
         }
     }
 
-    //public float damageMultiply(e_attackType type)
-    //{
-    //    float multiplier;
-    //    switch (type)
-    //    {
-    //        case
-    //    }
-    //    return multiplier;
-    //}
-
     public void Attack(IDamageable target, e_attackType type)
     {
             target.takeDamage(damage, type);
